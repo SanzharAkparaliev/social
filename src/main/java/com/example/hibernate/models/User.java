@@ -18,7 +18,7 @@ public class User {
     private Location location;
     private String email;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Post>posts;
 
     public User(Integer id, String firstname, String lastname, Location location, String email) {

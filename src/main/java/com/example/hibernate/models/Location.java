@@ -11,7 +11,7 @@ public class Location {
     private Integer id;
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "location")
     private List<User> users;
 
     public Location(Integer id, String name) {
