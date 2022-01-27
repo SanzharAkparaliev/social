@@ -4,6 +4,8 @@ package com.example.hibernate.models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class User {
@@ -15,6 +17,9 @@ public class User {
     @ManyToOne
     private Location location;
     private String email;
+
+    @OneToMany
+    private List<Post>posts;
 
     public User(Integer id, String firstname, String lastname, Location location, String email) {
         this.id = id;
