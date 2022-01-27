@@ -3,6 +3,7 @@ package com.example.hibernate.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class User {
@@ -10,6 +11,8 @@ public class User {
     private Integer id;
     private String firstname;
     private String lastname;
+
+    @ManyToOne
     private Location location;
     private String email;
 
