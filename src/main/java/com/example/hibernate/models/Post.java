@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
@@ -15,6 +16,7 @@ public class Post {
     private LocalDateTime postDate;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
     private String Details;
 

@@ -1,10 +1,7 @@
 package com.example.hibernate.models;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -15,6 +12,7 @@ public class User {
     private String lastname;
 
     @ManyToOne
+    @JoinColumn(name = "location_id")
     private Location location;
     private String email;
 
