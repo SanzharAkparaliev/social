@@ -1,6 +1,9 @@
 package com.example.hibernate.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -30,6 +33,7 @@ public class User {
     public User() {
     }
 
+    @JsonManagedReference
     public List<Post> getPosts() {
         return posts;
     }
@@ -62,6 +66,7 @@ public class User {
         this.lastname = lastname;
     }
 
+    @JsonBackReference
     public Location getLocation() {
         return location;
     }

@@ -1,6 +1,7 @@
 package com.example.hibernate.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.Entity;
@@ -47,6 +48,7 @@ public class Post {
         this.postDate = postDate;
     }
 
+    @JsonBackReference
     public User getUser() {
         return user;
     }
