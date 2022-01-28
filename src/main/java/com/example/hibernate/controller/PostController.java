@@ -3,9 +3,7 @@ package com.example.hibernate.controller;
 import com.example.hibernate.models.Post;
 import com.example.hibernate.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,5 +26,10 @@ public class PostController {
     @GetMapping("/posts/user/{id}/posts")
     public List<Post> GetPostsByUser(@PathVariable("id") Integer id){
         return postService.getPotsByUser(id);
+    }
+
+    @PostMapping("/posts/addNew")
+    public void AddPost(@RequestBody Post post){
+        postService.addPost(post);
     }
 }
