@@ -35,4 +35,9 @@ public class UserController {
         }
         return null;
     }
+
+    @GetMapping("/users/location/{id}/users")
+    public List<User> getUsersByLocation(@PathVariable("id") Integer id){
+        return userService.getUsersByLocation(id);
+    }
 }
