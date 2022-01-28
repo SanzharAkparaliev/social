@@ -14,6 +14,14 @@ public class Location {
     @OneToMany(mappedBy = "location")
     private List<User> users;
 
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
     public Location(Integer id, String name) {
         this.id = id;
         this.name = name;

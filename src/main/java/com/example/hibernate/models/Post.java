@@ -27,6 +27,7 @@ public class Post {
         Details = details;
     }
 
+
     public Post() {
     }
 
