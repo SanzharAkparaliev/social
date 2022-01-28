@@ -1,5 +1,6 @@
 package com.example.hibernate.controller;
 
+import com.example.hibernate.models.Post;
 import com.example.hibernate.models.User;
 import com.example.hibernate.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,15 @@ public class UserController {
     @GetMapping("/user/{id}")
     public Optional<User> getUserById(@PathVariable("id") Integer id){
         return userService.getUserById(id);
+    }
+
+    @GetMapping("/user/{id}/posts")
+    public List<Post> getPostsByUser(@PathVariable("id") Integer id){
+        Optional<User> user = userService.getUserById(id);
+        if(user.isPresent()){
+            User newUser = user.get();
+            return newUser.getPosts();
+        }
+        return null;
     }
 }
