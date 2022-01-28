@@ -20,4 +20,8 @@ public class LocationService {
     public Optional<Location> getLocationById(Integer id) {
         return locationRepository.findById(id);
     }
+
+    public void addLocation(Location location){
+        locationRepository.save(location);
+    }
 }
