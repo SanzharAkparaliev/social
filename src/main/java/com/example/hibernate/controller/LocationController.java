@@ -4,7 +4,6 @@ import com.example.hibernate.models.Location;
 import com.example.hibernate.models.User;
 import com.example.hibernate.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,7 +37,7 @@ public class LocationController {
 
 
     @PostMapping("/location/addnew")
-    public void AddLocation(@RequestBody Location location){
+    public void AddLocation(@RequestBody Location location) {
         locationService.addLocation(location);
     }
 }

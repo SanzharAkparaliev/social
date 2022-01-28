@@ -15,12 +15,22 @@ public class User {
     private String lastname;
 
     @ManyToOne
-    @JoinColumn(name = "location_id")
+    @JoinColumn(name = "locationid",insertable = false,updatable = false)
     private Location location;
+
+    private Integer locationid;
     private String email;
 
     @OneToMany(mappedBy = "user")
     private List<Post>posts;
+
+    public Integer getLocationid() {
+        return locationid;
+    }
+
+    public void setLocationid(Integer locationid) {
+        this.locationid = locationid;
+    }
 
     public User(Integer id, String firstname, String lastname, Location location, String email) {
         this.id = id;
