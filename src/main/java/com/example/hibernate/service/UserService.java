@@ -28,4 +28,8 @@ public class UserService {
     public void InsertUser(User user){
         userRepository.save(user);
     }
+
+    public void UpdateUser(User user) {
+        userRepository.save(user);
+    }
 }

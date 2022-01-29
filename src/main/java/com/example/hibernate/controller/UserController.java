@@ -43,4 +43,10 @@ public class UserController {
     public void AddUser(@RequestBody User user){
         userService.InsertUser(user);
     }
+
+
+    @PutMapping("/user/{id}/update")
+    public void UpdateUser(@RequestBody User user){
+        userService.UpdateUser(user);
+    }
 }
