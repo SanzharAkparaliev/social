@@ -49,4 +49,9 @@ public class UserController {
     public void UpdateUser(@RequestBody User user){
         userService.UpdateUser(user);
     }
+
+    @DeleteMapping("/users/{id}/delete")
+    void DeleteUser(@PathVariable Integer id){
+        userService.deleteUser(id);
+    }
 }

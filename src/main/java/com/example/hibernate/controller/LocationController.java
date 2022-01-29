@@ -45,4 +45,6 @@ public class LocationController {
     public void UpdateLocation(@RequestBody Location location){
         locationService.updateLocation(location);
     }
+
+
 }
