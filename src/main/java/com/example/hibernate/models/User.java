@@ -21,7 +21,7 @@ public class User {
     private Integer locationid;
     private String email;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private List<Post>posts;
 
     public Integer getLocationid() {
