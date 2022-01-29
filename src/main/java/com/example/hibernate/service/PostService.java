@@ -29,4 +29,8 @@ public class PostService {
     public void addPost(Post post) {
         postRepository.save(post);
     }
+
+    public void updatePots(Post post) {
+        postRepository.save(post);
+    }
 }
