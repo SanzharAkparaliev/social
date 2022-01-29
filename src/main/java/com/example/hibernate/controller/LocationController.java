@@ -46,5 +46,9 @@ public class LocationController {
         locationService.updateLocation(location);
     }
 
+    @DeleteMapping("/locations/{id}/delete")
+    public void DeleteLocation(@PathVariable Integer id){
+        locationService.deleteLocation(id);
+    }
 
 }
